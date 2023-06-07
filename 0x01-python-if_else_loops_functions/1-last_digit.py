@@ -5,8 +5,8 @@ neg_number = 0
 
 print("Last digit of", number, "is", end=" ")
 if number < 0:
-    neg_number = number;
-    number *= -1;
+    neg_number = number
+    number *= -1
 number %= 10
 if neg_number != 0:
     number *= -1
