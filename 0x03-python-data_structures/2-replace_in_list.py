@@ -2,7 +2,7 @@
 
 def replace_in_list(my_list, idx, element):
     if not isinstance(my_list, list):
-        return None
+        return my_list
 
     if not element:
         return my_list
