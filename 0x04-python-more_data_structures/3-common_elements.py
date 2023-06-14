@@ -9,6 +9,4 @@ def common_elements(set_1, set_2):
             if s == ss:
                 new_set.add(ss)
                 break
-    if not len(new_set):
-        return None
     return new_set
