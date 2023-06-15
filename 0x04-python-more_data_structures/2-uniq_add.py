@@ -4,7 +4,7 @@ def uniq_add(my_list=[]):
     if not my_list:
         return None
     if len(my_list) < 1:
-        return None
+        return sum
     new_list = sorted(my_list)
     last_num = None
     sum = 0
