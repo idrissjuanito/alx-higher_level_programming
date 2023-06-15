@@ -3,7 +3,7 @@
 def only_diff_elements(set_1, set_2):
     new_set = set()
     if not set_1 and not set_2:
-        return new_set 
+        return new_set
     if not set_1 and set_2:
         return set_2
     if not set_2:
