@@ -8,4 +8,4 @@ class Square:
     Attributes:
         size: size of the square
     """
-    __size
+    _size
