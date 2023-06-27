@@ -6,6 +6,10 @@ class Square:
     """ Square class to create square objects
 
     Attributes:
-        size: size of the square
+        square__size: size of the square
+
+    Args:
+        square__size: total size of the square
     """
-    _size
+    def __init__(self, _square__size):
+    i   self._square__size = _square__size
