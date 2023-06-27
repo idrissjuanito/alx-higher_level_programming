@@ -7,6 +7,7 @@ class Square:
     """
     def __init__(self, square__size=0, position=(0, 0)):
         self._Square__size = square__size
+        self._position = position
 
     def area(self):
         """Calculates the area of the square instance
@@ -39,12 +40,12 @@ class Square:
 
     def my_print(self):
         # Prints the area of the square with # symbol
-        for i in range(self._Square__size + self.position[1]):
-            if i < self.position[1]:
+        for i in range(self._Square__size + self._position[1]):
+            if i < self._position[1]:
                 print()
             else:
-                for j in range(self._Square__size + self.position[0]):
-                    if (j < self.position[0]):
+                for j in range(self._Square__size + self._position[0]):
+                    if (j < self._position[0]):
                         print(" ", end="")
                     else:
                         print("#", end="")
@@ -58,10 +59,12 @@ class Square:
 
         Returns: instance position tuple
         """
-        return self.position
+        return self._position
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple) or len(position) != 2:
+        if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.position = value
+        if value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self._position = value
