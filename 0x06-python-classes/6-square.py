@@ -64,15 +64,14 @@ class Square:
 
     def my_print(self):
         # Prints the area of the square with # symbol
-        for i in range(self.__size + self.__position[1]):
-            if i < self.__position[1]:
-                print()
-            else:
-                for j in range(self.__size + self.__position[0]):
-                    if (j < self.__position[0]):
-                        print(" ", end="")
-                    else:
-                        print("#", end="")
-                print()
+        for s in range(self.__position[1]):
+            print()
+        for i in range(self.__size):
+            for j in range(self.__size + self.__position[0]):
+                if (j < self.__position[0]):
+                    print(" ", end="")
+                else:
+                    print("#", end="")
+            print()
         if not self.__size:
             print()
