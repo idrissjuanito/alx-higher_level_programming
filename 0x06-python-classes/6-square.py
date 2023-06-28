@@ -30,7 +30,7 @@ class Square:
         Returns:
             the current value of size attribute
         """
-        return self__size
+        return self.__size
 
     @property
     def position(self):
@@ -55,18 +55,18 @@ class Square:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        self__size = value
+        self.__size = value
 
     def my_print(self):
         # Prints the area of the square with # symbol
         for s in range(self.__position[1]):
             print()
-        for i in range(self__size):
-            for j in range(self__size + self.__position[0]):
+        for i in range(self.__size):
+            for j in range(self.__size + self.__position[0]):
                 if (j < self.__position[0]):
                     print(" ", end="")
                 else:
                     print("#", end="")
             print()
-        if not self__size:
+        if not self.__size:
             print()
