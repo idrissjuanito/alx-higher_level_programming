@@ -4,17 +4,24 @@
 
 class Square:
     """ Square class to create square objects
+
+    Attributes:
+        position (tuple): position to start printing sqaure
+        size (int): size of the square
+    Args:
+        position (tuple): position to start printing sqaure
+        square__size (int): size of the square
     """
     def __init__(self, square__size=0, position=(0, 0)):
-        self._Square__size = square__size
-        self._position = position
+        self.size = square__size
+        self.position = position
 
     def area(self):
         """Calculates the area of the square instance
         Returns:
             area of the square
         """
-        return self._Square__size ** 2
+        return self.__size ** 2
 
     @property
     def size(self):
@@ -23,7 +30,28 @@ class Square:
         Returns:
             the current value of size attribute
         """
-        return self._Square__size
+        return self.__size
+
+    @property
+    def position(self):
+        """Tuple that sets the position to start printing square
+
+        Returns:
+            instance position tuple
+        """
+        return self.__position
+
+    @position.setter
+    def position(self, pos):
+        """Setter for safely setting the value of square size
+
+        Args:
+            value: the value to assign to square__size
+        """
+        if not type(pos) is tuple or len(pos) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        # raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = pos
 
     @size.setter
     def size(self, value):
@@ -36,35 +64,19 @@ class Square:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        self._Square__size = value
+        self.__size = value
 
     def my_print(self):
         # Prints the area of the square with # symbol
-        for i in range(self._Square__size + self._position[1]):
-            if i < self._position[1]:
+        for i in range(self.__size + self.__position[1]):
+            if i < self.__position[1]:
                 print()
             else:
-                for j in range(self._Square__size + self._position[0]):
-                    if (j < self._position[0]):
+                for j in range(self.__size + self.__position[0]):
+                    if (j < self.__position[0]):
                         print(" ", end="")
                     else:
                         print("#", end="")
                 print()
-        if not self._Square__size:
+        if not self.__size:
             print()
-
-    @property
-    def position(self):
-        """Tuple that sets the position to start printing square
-
-        Returns: instance position tuple
-        """
-        return self._position
-
-    @position.setter
-    def position(self, value):
-        if not isinstance(value, tuple) or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if value[0] < 0 or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self._position = value
