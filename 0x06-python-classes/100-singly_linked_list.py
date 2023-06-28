@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-# File contains Node class for singly linked list
+""" File contains Node class for singly linked list
+ """
 
 class Node:
     """ Node class for defining The nodes of a linked list
