@@ -8,6 +8,9 @@ class Node:
         Args:
             data (int): and integer value for the node
             next_node (Node): the next_node object
+        Attributes:
+            data (int): and integer value for the node
+            next_node (Node): the next_node object
     """
     def __init__(self, data, next_node=None):
         self.data = data
@@ -49,6 +52,8 @@ class SinglyLinkedList:
 
         Args:
             head (Node): first node of the
+        Attributes:
+            head (Node): first node of the
     """
     def __init__(self):
         self.__head = None
@@ -67,6 +72,8 @@ class SinglyLinkedList:
 
         Args:
             value (int): Value of the node to insert
+
+        Returns: Nothing
         """
         n = Node(value)
         if not self.__head:
