@@ -1,0 +1,24 @@
+>>> add_integer = __import__("0-add_integer").add_integer
+
+>>> add_integer(0, 0)
+0
+>>> add_integer(-1, 4)
+3
+>>> add_integer(-2, -4)
+-6
+>>> add_integer(3, 9)
+12
+>>> add_integer(3.2, 3)
+6
+>>> add_integer(5, "mark")
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+TypeError: b must be an integer
+>>> add_integer(None, 2)
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+TypeError: a must be an integer
+>>> add_integer(3, None)
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+TypeError: b must be an integer
