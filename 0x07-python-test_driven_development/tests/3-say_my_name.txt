@@ -1,0 +1,17 @@
+>>> say_n = __import__("3-say_my_name").say_my_name
+>>> say_n("John", "Smith")
+My name is John Smith
+>>> say_n("Walter", "White")
+My name is Walter White
+>>> say_n("Bob")
+My name is Bob 
+>>> say_n(12, "White")
+Traceback (most recent call last):
+	File "<stdin>", line 1, in <module>
+ 	File "/vagrant_data/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 16, in say_my_name
+		raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+>>> say_n("", "Jordan")
+My name is  Jordan
+>>> say_n("")
+My name is  
