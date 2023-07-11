@@ -10,8 +10,10 @@ True
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
 >>> my_list = MyList()
->>> my_list.print_sorted()
+>>> lst = my_list.print_sorted()
 []
+>>> print(lst)
+None
 >>> my_list.append(1)
 >>> my_list.append(2)
 >>> my_list.append(3)
@@ -23,6 +25,5 @@ True
 >>> my_list.print_sorted()
 [-2]
 >>> my_list = MyList()
->>> print(my_list.print_sorted())
+>>> print(str(my_list))
 []
-None
