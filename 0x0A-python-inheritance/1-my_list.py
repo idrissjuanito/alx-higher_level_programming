@@ -7,6 +7,10 @@ class MyList(list):
     """ subclass of the list class
         adds methods to the list class
     """
+    def __str__(self):
+        pass
     def print_sorted(self):
         """ sorts and prints a list """
-        print(sorted(self))
+        lst = sorted(self)
+        print(lst)
+        return lst
