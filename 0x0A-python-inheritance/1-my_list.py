@@ -11,4 +11,3 @@ class MyList(list):
         """ sorts and prints a list """
         lst = sorted(self)
         print(lst)
-        return lst
