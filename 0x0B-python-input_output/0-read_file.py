@@ -2,6 +2,7 @@
 
 """ Module on file reading """
 
+
 def read_file(filename=""):
     """ reads a file and and prints the content to stdout
     Args:
@@ -9,4 +10,4 @@ def read_file(filename=""):
     Returns: nothing
     """
     with open(filename, "r") as fl:
-        print(fl.read())
+        print(fl.readall())
