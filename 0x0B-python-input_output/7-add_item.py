@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" script for writing data gotten from scritp's arguments to a file"""
 import json
 from sys import argv
 import os
