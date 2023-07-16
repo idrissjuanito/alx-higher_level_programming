@@ -107,10 +107,10 @@ class Rectangle(Base):
             args (list): contains all new values passed and to update
         Returns: nothing
         """
+        if not args or len(args) > 0:
+            for key, val in kwargs.items():
+                setattr(self, key, val)
+            return
         attr = ["id", "width", "height", "x", "y"]
         for i in range(len(args)):
             setattr(self, attr[i], args[i])
-        if args and len(args) > 0:
-            return
-        for key, val in kwargs.items():
-            setattr(self, key, val)
