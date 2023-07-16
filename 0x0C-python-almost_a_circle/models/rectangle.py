@@ -35,6 +35,11 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def __str__(self):
+        w = self.width
+        h = self.height
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {w}/{h}"
+
     @property
     def width(self):
         """ Getter for width private attribute """
@@ -78,3 +83,14 @@ class Rectangle(Base):
         """ Setter for y private attribute """
         validate_int("y", value)
         self.__y = value
+
+    def area(self):
+        """ computes the area of the rectangle instance """
+        return self.width * self.height
+
+    def display(self):
+        """ Displays to standard output """
+        for r in range(self.height):
+            for h in range(self.width):
+                print("#", end="")
+            print()
