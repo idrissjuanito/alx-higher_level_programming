@@ -90,7 +90,27 @@ class Rectangle(Base):
 
     def display(self):
         """ Displays to standard output """
-        for r in range(self.height):
-            for h in range(self.width):
+        for r in range(self.height + self.y):
+            if r < self.y:
+                print()
+                continue
+            for h in range(self.width + self.x):
+                if h < self.x:
+                    print(" ", end="")
+                    continue
                 print("#", end="")
             print()
+
+    def update(self, *args, **kwargs):
+        """ updates the attributes values of this class
+        params:
+            args (list): contains all new values passed and to update
+        Returns: nothing
+        """
+        attr = ["id", "width", "height", "x", "y"]
+        for i in range(len(args)):
+            setattr(self, attr[i], args[i])
+        if args and len(args) > 0:
+            return
+        for key, val in kwargs.items():
+            setattr(self, key, val)
