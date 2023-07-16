@@ -11,7 +11,7 @@ class Base():
         Args:
             id (int): id of the current object
         """
-        if id == None:
+        if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
         else:
