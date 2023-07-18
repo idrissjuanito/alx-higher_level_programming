@@ -13,3 +13,7 @@ class TestBase(unittest.TestCase):
     def test_auto_id(self):
         b2 = Base()
         self.assertEqual(b2.id, 2)
+
+    def test_assign_id(self):
+        b3 = Base(39)
+        self.assertEqual(b3.id, 39)
