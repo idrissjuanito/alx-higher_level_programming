@@ -6,7 +6,7 @@ from models.base import Base
 class TestBase(unittest.TestCase):
     """ test unit for the base class – inherits unittest's TestCase class """
 
-    def test_assign_id(self):
+    def test_au_id(self):
         b = Base()
         self.assertEqual(b.id, 1)
 
