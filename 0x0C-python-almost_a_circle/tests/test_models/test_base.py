@@ -6,8 +6,10 @@ from models.base import Base
 class TestBase(unittest.TestCase):
     """ test unit for the base class – inherits unittest's TestCase class """
 
-    def test_id(self):
+    def test_assign_id(self):
         b = Base()
         self.assertEqual(b.id, 1)
-        b1 = Base()
+
+    def test_auto_id(self):
+        b2 = Base()
         self.assertEqual(b2.id, 2)
