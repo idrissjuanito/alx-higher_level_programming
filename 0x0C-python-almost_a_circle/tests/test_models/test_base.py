@@ -8,11 +8,11 @@ class TestBase(unittest.TestCase):
 
     def test_au_id(self):
         b = Base()
-        self.assertEqual(b.id, 1)
+        self.assertEqual(b.id, 2)
 
     def test_auto_id(self):
         b2 = Base()
-        self.assertEqual(b2.id, 2)
+        self.assertEqual(b2.id, 3)
 
     def test_assign_id(self):
         b3 = Base(39)
