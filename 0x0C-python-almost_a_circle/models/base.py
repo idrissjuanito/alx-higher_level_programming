@@ -59,6 +59,6 @@ class Base():
         Returns:
             an instance with attributes set to dictionary values
         """
-        inst = cls(9, 7)
+        inst = cls(3) if cls.__name__ == 'Square' else cls(3, 8)
         inst.update(**dictionary)
         return inst
