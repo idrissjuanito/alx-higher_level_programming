@@ -13,7 +13,6 @@ class Square(Rectangle):
         id (int): id of instance
     """
     def __init__(self, size, x=0, y=0, id=None):
-        self.size = size
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -22,13 +21,13 @@ class Square(Rectangle):
     @property
     def size(self):
         """ Getter method for sqaure size """
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
         """ Setter method for the size of square """
-        validate_int("width", value)
-        self.__size = value
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
         """ updates the values of the square attributes
