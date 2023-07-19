@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module contains base class """
 import json
+from os import path
 
 
 class Base():
@@ -62,3 +63,16 @@ class Base():
         inst = cls(3) if cls.__name__ == 'Square' else cls(3, 8)
         inst.update(**dictionary)
         return inst
+
+    @classmethod
+    def load_from_file(cls):
+        """ creates instances of cls from file data """
+        filename = f"{cls.__name__}.json"
+        if not path.isfile(filename):
+            return list()
+        lst = list()
+        with open(filename, 'r') as fl:
+            file_lst = cls.from_json_string(fl.read())
+            for dct in file_lst:
+                lst.append(cls.create(**dct))
+        return lst
