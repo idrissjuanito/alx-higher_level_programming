@@ -50,3 +50,15 @@ class Base():
             return []
         lst = json.loads(json_string)
         return lst
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ create and returns and instance of a subclass
+        dictionary (dict): data for instance attributes
+
+        Returns:
+            an instance with attributes set to dictionary values
+        """
+        inst = cls(9, 7)
+        inst.update(**dictionary)
+        return inst
