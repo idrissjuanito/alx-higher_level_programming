@@ -107,7 +107,7 @@ class Rectangle(Base):
             args (list): contains all new values passed and to update
         Returns: nothing
         """
-        if not args or len(args) > 0:
+        if not args or len(args) <= 0:
             for key, val in kwargs.items():
                 setattr(self, key, val)
             return
