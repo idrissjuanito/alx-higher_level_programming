@@ -39,3 +39,14 @@ class Base():
         filename = f"{cls.__name__}.json"
         with open(filename, 'w') as fl:
             fl.write(json_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ converts json string to list
+        params:
+            json-string (str): json string to convert
+        """
+        if not json_string or len(json_string) == 0:
+            return []
+        lst = json.loads(json_string)
+        return lst
