@@ -114,3 +114,7 @@ class Rectangle(Base):
         attr = ["id", "width", "height", "x", "y"]
         for i in range(len(args)):
             setattr(self, attr[i], args[i])
+
+    def to_dictionary(self):
+        """ returns the dictionay representation of this class """
+        return self.__dict__
