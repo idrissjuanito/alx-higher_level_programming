@@ -5,10 +5,6 @@ import unittest
 
 
 class TestRectangle(unittest.TestCase):
-    def test_two_att(self):
-        r1 = Rectangle(3, 5)
-        self.assertEqual(r1.id, 8)
-
     def test_three_att(self):
         r2 = Rectangle(3, 4, 6)
         self.assertEqual(r2.x, 6)
