@@ -21,3 +21,9 @@ class TestRectangle(unittest.TestCase):
     def test_five_att(self):
         r4 = Rectangle(2, 4, 0, 1, 90)
         self.assertEqual(r4.y, 1)
+
+    def test_wrong_type_att(self):
+        try:
+            r4 = Rectangle(3, "2")
+        except Exception as e:
+            self.assertEqual(e.__class__.__name__, "TypeError")
