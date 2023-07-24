@@ -8,19 +8,22 @@ class TestRectangle(unittest.TestCase):
     def test_two_att(self):
         r1 = Rectangle(3, 5)
         self.assertEqual(r1.width, 3)
+
+    def test_two_att(self):
+        r1 = Rectangle(3, 5)
         self.assertEqual(r1.height, 5)
 
     def test_three_att(self):
         r2 = Rectangle(3, 4, 6)
-        self.assertEqual(r2.id, 5)
+        self.assertEqual(r2.x, 6)
 
     def test_four_att(self):
-        r3 = Rectangle(3, 2, 0, 0)
-        self.assertEqual(r3.x, 0)
+        r3 = Rectangle(3, 2, 0, 2)
+        self.assertEqual(r3.y, 2)
 
     def test_five_att(self):
         r4 = Rectangle(2, 4, 0, 1, 90)
-        self.assertEqual(r4.y, 1)
+        self.assertEqual(r4.id, 90)
 
     def test_string_height(self):
         try:
@@ -55,5 +58,5 @@ class TestRectangle(unittest.TestCase):
     def test_string_width(self):
         try:
             rec = Rectangle("2", 3)
-        except TypeErrorError as e:
+        except TypeError as e:
             self.assertEqual(e.__str__(), "width must be an integer")
