@@ -12,7 +12,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_three_att(self):
         r2 = Rectangle(3, 4, 6)
-        self.assertEqual(r2.id, 4)
+        self.assertEqual(r2.id, 5)
 
     def test_four_att(self):
         r3 = Rectangle(3, 2, 0, 0)
@@ -25,5 +25,13 @@ class TestRectangle(unittest.TestCase):
     def test_wrong_type_att(self):
         try:
             r4 = Rectangle(3, "2")
-        except Exception as e:
+        except TypeError as e:
             self.assertEqual(e.__class__.__name__, "TypeError")
+            self.assertEqual(e.__str__(), "height must be an integer")
+
+    def test_negative_width(self):
+        try:
+            rec = Rectangle(-1, 0)
+        except ValueError as e:
+            self.assertEqual(e.__class__.__name__, "ValueError")
+            self.assertEqual(e.__str__(), "width must be > 0")
