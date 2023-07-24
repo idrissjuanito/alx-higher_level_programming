@@ -22,14 +22,38 @@ class TestRectangle(unittest.TestCase):
         r4 = Rectangle(2, 4, 0, 1, 90)
         self.assertEqual(r4.y, 1)
 
-    def test_wrong_type_att(self):
+    def test_string_height(self):
         try:
             r4 = Rectangle(3, "2")
         except TypeError as e:
-            self.assertEqual(e.__class__.__name__, "TypeError")
+            self.assertEqual(e.__str__(), "height must be an integer")
+
+    def test_zero_width(self):
+        try:
+            rec = Rectangle(0, 9)
+        except ValueError as e:
+            self.assertEqual(e.__str__(), "width must be > 0")
+
+    def test_zero_height(self):
+        try:
+            rec = Rectangle(3, 0)
+        except ValueError as e:
+            self.assertEqual(e.__str__(), "height must be > 0")
 
     def test_negative_width(self):
         try:
-            rec = Rectangle(-1, 4)
+            rec = Rectangle(-1, 5)
         except ValueError as e:
-            self.assertEqual(e.__class__.__name__, "ValueError")
+            self.assertEqual(e.__str__(), "width must be > 0")
+
+    def test_negative_height(self):
+        try:
+            rec = Rectangle(6, -8)
+        except ValueError as e:
+            self.assertEqual(e.__str__(), "height must be > 0")
+
+    def test_string_width(self):
+        try:
+            rec = Rectangle("2", 3)
+        except TypeErrorError as e:
+            self.assertEqual(e.__str__(), "width must be an integer")
