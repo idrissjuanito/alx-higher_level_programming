@@ -43,7 +43,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_negative_height(self):
         try:
-            rec5 = Rectangle(6, -8)
+            rec5 = Rectangle(1, -2)
         except ValueError as e:
             self.assertEqual(e.__str__(), "height must be > 0")
 
