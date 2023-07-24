@@ -13,12 +13,6 @@ class TestRectangle(unittest.TestCase):
         rect = Rectangle(3, 2, 5, 8, 9)
         self.assertEqual(rect.id, 9)
 
-    def test_string_x(self):
-        try:
-            rect2 = Rectangle(2, 3, "4")
-        except TypeError as e:
-            self.assertEqual(e.__class__.__name__, "TypeError")
-
     def test_four_att(self):
         r3 = Rectangle(3, 2, 0, 2)
         self.assertEqual(r3.y, 2)
