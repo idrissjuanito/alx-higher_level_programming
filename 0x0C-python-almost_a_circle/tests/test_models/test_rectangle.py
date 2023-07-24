@@ -39,14 +39,12 @@ class TestRectangle(unittest.TestCase):
         try:
             rec4 = Rectangle(-1, 3)
         except ValueError as e:
-            self.assertEqual(e.__class__.__name__, "ValueError")
             self.assertEqual(e.__str__(), "width must be > 0")
 
     def test_negative_height(self):
         try:
-            rec5 = Rectangle(4, -2)
+            rec5 = Rectangle(1, -2)
         except ValueError as e:
-            self.assertEqual(e.__class__.__name__, "ValueError")
             self.assertEqual(e.__str__(), "height must be > 0")
 
     def test_string_width(self):
