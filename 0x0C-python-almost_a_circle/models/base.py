@@ -3,7 +3,6 @@
 import json
 from os import path
 
-
 class Base():
     """ Base class for futur classes """
     __nb_objects = 0
@@ -18,6 +17,7 @@ class Base():
             self.id = Base.__nb_objects
         else:
             self.id = id
+
 
     @staticmethod
     def to_json_string(list_dictionaries):
