@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const topTwo = [];
 const { argv } = process;
-if (argv.length < 3) console.log(0);
+if (argv.length < 4) console.log(0);
 else {
   for (let i = 2; i < argv.length; i++) {
     const arg = parseInt(argv[i]);
