@@ -24,5 +24,5 @@ else {
       topTwo.unshift(arg);
     }
   }
+  console.log(topTwo[0]);
 }
-console.log(topTwo[0]);
