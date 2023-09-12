@@ -8,9 +8,9 @@ module.exports = class Rectangle {
   }
 
   print () {
-    for (let i = 0; i < this.width; i++) {
+    for (let i = 0; i < this.height; i++) {
       let X = '';
-      for (let k = 0; k < this.height; k++) {
+      for (let k = 0; k < this.width; k++) {
         X += 'X';
       }
       console.log(X);
