@@ -1,5 +1,5 @@
 #!/usr/bin/node
-exports.adMeMaybe = function (nb, callback) {
+exports.addMeMaybe = function (nb, callback) {
   nb++;
   callback(nb);
 };
