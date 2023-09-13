@@ -2,8 +2,8 @@
 function logger () {
   let count = 0;
   return (str) => {
-    count++;
     console.log(count + ':', str);
+    count++;
   };
 }
 exports.logMe = logger();
