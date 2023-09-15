@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
     Module connect to MySQL using MySQLdb Module
     – selects all states and filters by the fouth
