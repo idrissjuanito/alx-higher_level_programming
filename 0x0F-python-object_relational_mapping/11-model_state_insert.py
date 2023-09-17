@@ -15,4 +15,4 @@ if __name__ == "__main__":
     ill = State(name='Louisiana')
     session.add(ill)
     new_state = session.query(State).filter_by(name='Louisiana').first()
-    print(new_state.id)
+    # print(new_state.id)
