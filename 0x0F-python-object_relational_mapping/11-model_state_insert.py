@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ add a record to the database """
 from sqlalchemy import create_engine
 from sqlalchemy.exc import NoResultFound
