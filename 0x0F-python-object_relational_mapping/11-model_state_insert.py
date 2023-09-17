@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     try:
-        ill = State(name='Illinois')
+        ill = State(name='Louisiana')
         session.add(ill)
     except Exception:
         print("Not added")
