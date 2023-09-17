@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ add a record to the database """
 from sqlalchemy import create_engine
 from sqlalchemy.exc import NoResultFound
@@ -14,5 +14,5 @@ if __name__ == "__main__":
     session = Session()
     ill = State(name='Louisiana')
     session.add(ill)
-    new_state = session.query(State).filter_by(name='Louisiana').first()
-    print(new_state.id)
+    session.commit()
+    print(ill.id)
