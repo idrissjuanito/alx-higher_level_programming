@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Query db using sqlalchemy module
+    filter results which contains letter a
+"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
