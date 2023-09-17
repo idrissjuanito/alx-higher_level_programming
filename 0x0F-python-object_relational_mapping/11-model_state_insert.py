@@ -13,5 +13,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     ill = State(name='Louisiana')
-    print(ill.id)
     session.add(ill)
+    new_state = session.query(State).filter_by(name='Louisiana').first()
+    print(new_state.id)
