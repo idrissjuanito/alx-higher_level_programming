@@ -12,8 +12,6 @@ if __name__ == "__main__":
     engine = create_engine(con_str)
     Session = sessionmaker(bind=engine)
     session = Session()
-    try:
-        ill = State(name='Louisiana')
-        session.add(ill)
-    except Exception:
-        print("Not added")
+    ill = State(name='Louisiana')
+    print(ill.id)
+    session.add(ill)
