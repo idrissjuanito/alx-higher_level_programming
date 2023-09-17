@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ Query db using sqlalchemy module
     filter results by search term passed as script argument
 """
