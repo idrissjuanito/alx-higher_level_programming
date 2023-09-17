@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ Query db using sqlalchemy module
     filter results by search term passed as script argument
 """
@@ -17,6 +17,6 @@ if __name__ == "__main__":
     try:
         res = session.query(State).filter(
             State.name == argv[4]).order_by(State.id).one()
-        print(res[0].id)
+        print(res.id)
     except NoResultFound:
         print("Not found")
