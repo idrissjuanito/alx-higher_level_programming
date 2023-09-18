@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ City object class for sqlalchemy orm """
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, ForeignKey, Integer, String
