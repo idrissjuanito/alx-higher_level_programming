@@ -1,3 +1,4 @@
+""" City object class for sqlalchemy orm """
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
@@ -6,6 +7,7 @@ Base = declarative_base()
 
 
 class City(Base):
+    """ table cities and schema definition """
     __tablename__ = 'cities'
     id = Column(Integer, unique=True, autoincrement=True,
                 primary_key=True, nullable=False)
