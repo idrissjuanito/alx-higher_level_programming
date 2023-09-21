@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-""" add a record to the database """
+""" Query realted tables state and cities """
 from sqlalchemy import create_engine
-from sqlalchemy.exc import NoResultFound
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 from relationship_city import City
@@ -21,4 +19,5 @@ if __name__ == "__main__":
     for s in results:
         print('{}: {}'.format(s.id, s.name))
         for c in s.cities:
-            print('\t{}: {}'.format(c.id, c.name))
+            print('    {}: {}'.format(c.id, c.name))
+    session.close()
