@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ Query realted tables state and cities """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
