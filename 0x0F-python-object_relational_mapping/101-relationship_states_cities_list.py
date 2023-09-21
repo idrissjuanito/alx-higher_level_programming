@@ -7,7 +7,6 @@ from sqlalchemy.orm import sessionmaker
 from sys import argv
 from relationship_city import City
 from relationship_state import State, Base
-# Base = declarative_base
 
 
 if __name__ == "__main__":
@@ -17,8 +16,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(bind=engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    results = session.query(State).order_by(State.id).all()
-    for v in results:
-        print('{}: {}'.format(v.id, v.name))
-        for c in v.cities:
+    results = session.query(State).join(City).filter(
+            State.id == City.state_id).order_by(State.id, City.id)
+    for s in results:
+        print('{}: {}'.format(s.id, s.name))
+        for c in s.cities:
             print('\t{}: {}'.format(c.id, c.name))
