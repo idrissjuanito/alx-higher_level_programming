@@ -1,3 +1,3 @@
 #!/bin/bash
 # sends a get request with header values
-curl -s -H "X-School-User-Id:80" $1 -X GET
+curl -s -X GET -H "X-School-User-Id:80" $1
