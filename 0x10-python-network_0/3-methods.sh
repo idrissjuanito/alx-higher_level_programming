@@ -1,3 +1,3 @@
 #!/bin/bash
 # displays all accepted http methods
-curl -sw "%header{Allow}" $1
+curl -sI $1 -X OPTIONS | grep 'Allow:' | cut -d: -f2
