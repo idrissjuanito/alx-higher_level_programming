@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Script extracts the content size from http request header
 if [[ ! $# -eq 1 ]]; then
     echo "USAGE: command URL";
