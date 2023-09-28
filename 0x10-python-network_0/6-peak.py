@@ -3,18 +3,17 @@
 def find_peak(list_of_integers):
     """ Finds and returns a peak from given list """
     llen = len(list_of_integers)
-    peakindex = None
+    peakindex = 0
     if llen < 1: return None
-    if llen == 1: return list_of_integers[0]
-    for i in range(llen):
-        if i == llen - 1:
-            if not peakindex:
-                peakindex = i
-            break
-        if list_of_integers[i] > list_of_integers[i+1]:
-            if i > 0 and list_of_integers[i] < list_of_integers[i-1]:
-                continue
+    for i in range(1, llen):
+        if list_of_integers[i] < list_of_integers[i-1]:
+            continue
+        if i + 1 == llen:
             peakindex = i
-        if peakindex != None and list_of_integers[i] == list_of_integers[i+1]:
+            break
+        if list_of_integers[i] == list_of_integers[i+1]:
             break;
+        if list_of_integers[i] > list_of_integers[i+1]:
+            peakindex = i
+            i += 2
     return list_of_integers[peakindex]
