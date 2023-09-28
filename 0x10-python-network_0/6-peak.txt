@@ -1,0 +1,2 @@
+complexity of algorithm for searching peak in a list
+O(n)
