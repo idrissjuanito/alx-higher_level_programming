@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from urllib import request
-from sys import argv
+import sys
+import urllib.request
 
-with request.urlopen(argv[1]) as res:
+with urllib.request.urlopen(sys.argv[1]) as res:
     print(res.headers['X-Request-Id'])
