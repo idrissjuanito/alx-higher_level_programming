@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+""" extract request header from urllib request """
 import sys
-import urllib.request
+from urllib import request
 
-with urllib.request.urlopen(sys.argv[1]) as res:
+with request.urlopen(sys.argv[1]) as res:
     print(res.headers.get('X-Request-Id'))
