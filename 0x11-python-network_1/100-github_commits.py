@@ -4,9 +4,7 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    token = 'Bearer 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'
-    heads = {'Authorization': token,
-             'X-GitHub-Api-Version': '2022-11-28',
+    heads = { 'X-GitHub-Api-Version': '2022-11-28',
              'Accept': 'application/vnd.github+json'}
     url = f'https://api.github.com/repos/{argv[2]}/{argv[1]}/commits'
     res = requests.get(url, headers=heads)
