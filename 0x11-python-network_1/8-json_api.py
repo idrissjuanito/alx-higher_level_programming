@@ -8,10 +8,9 @@ if __name__ == "__main__":
     res = requests.post('http://0.0.0.0:5000/search_user', params={'q': val})
     try:
         r = res.json()
-        if len(r.keys()) < 1:
+        if len(r.keys()) == 0:
             print('No result')
         else:
-            print('[{}] {}'.format(r.id, r.name))
+            print('[{}] {}'.format(r['id'], r['name']))
     except requests.exceptions.InvalidJSONError as e:
         print('Not a valid JSON')
-    print(res.text)
