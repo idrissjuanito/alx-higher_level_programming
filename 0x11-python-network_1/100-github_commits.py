@@ -4,14 +4,11 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    heads = { 'X-GitHub-Api-Version': '2022-11-28',
+    heads = {'X-GitHub-Api-Version': '2022-11-28',
              'Accept': 'application/vnd.github+json'}
     url = f'https://api.github.com/repos/{argv[2]}/{argv[1]}/commits'
     res = requests.get(url, headers=heads)
-    if res.status_code == 200:
-        r = res.json()
-        for commit in r:
-            print('{}: {}'.format(commit['sha'],
-                                  commit['commit']['author']['name']))
-    else:
-        print(None)
+    r = res.json()
+    for commit in r:
+        print('{}: {}'.format(commit['sha'],
+                              commit['commit']['author']['name']))
