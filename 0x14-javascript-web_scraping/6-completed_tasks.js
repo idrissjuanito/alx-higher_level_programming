@@ -9,7 +9,7 @@ request(argv[2], (error, res, body) => {
   const todos = JSON.parse(body);
   todos.forEach(todo => {
     if (todo.completed) {
-      if (Object.hasOwn(obj, todo.userId)) obj[todo.userId]++;
+      if (Object.prototype.hasOwnProperty.call(obj, todo.userId)) obj[todo.userId]++;
       else obj[todo.userId] = 1;
     }
   });
