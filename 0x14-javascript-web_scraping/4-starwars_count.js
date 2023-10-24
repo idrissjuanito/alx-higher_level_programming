@@ -10,7 +10,7 @@ request(argv[2], (error, res, body) => {
   const num = films.reduce((prev, next) => {
     const characters = next.characters;
     for (let i = 0; i < characters.length; i++) {
-      if (characters[i].slice(-3, -1) === '13') prev++;
+      if (characters[i].slice(-3, -1) === '18') prev++;
     }
     return prev;
   }, 0);
