@@ -4,14 +4,19 @@ const request = require('request');
 const { argv } = require('process');
 const reqUrl = 'https://swapi-api.alx-tools.com/api/films/';
 
-request(reqUrl + argv[2], (error, res, body) => {
+request(reqUrl + argv[2], async (error, res, body) => {
   if (error) console.log(error);
   const films = JSON.parse(body);
-  films.characters.forEach(character => {
-    request(character, (error, res, body) => {
-      if (error) console.log(error);
-      const ch = JSON.parse(body);
-      console.log(ch.name);
+
+  const arr = films.characters.map(async (ch, index) => {
+    const name = await new Promise((resolve, reject) => {
+      request(ch, (error, res, body) => {
+        if (error) return reject(error);
+        return resolve(JSON.parse(body).name);
+      });
     });
+    return name;
   });
+  const values = await Promise.all(arr);
+  values.forEach(name => console.log(name));
 });
